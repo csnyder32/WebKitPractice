@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="WBk-2t-F6R">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="ufC-wZ-h7g">
+            <objects>
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModule="WebKitPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
+                        <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2pf-Mq-BV3">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Stuff!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfE-rT-9Og">
+                                <rect key="frame" x="248" y="282" width="104.5" height="36"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="26"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="dfE-rT-9Og" secondAttribute="centerX" id="51t-9Y-nMj"/>
+                            <constraint firstAttribute="centerY" secondItem="dfE-rT-9Og" secondAttribute="centerY" id="JSP-PO-IlE"/>
+                            <constraint firstAttribute="centerY" secondItem="2pf-Mq-BV3" secondAttribute="centerY" id="QQh-IZ-1fT"/>
+                            <constraint firstItem="2pf-Mq-BV3" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="hhD-r0-uEd"/>
+                            <constraint firstItem="2pf-Mq-BV3" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="nNq-Me-Xl8"/>
+                            <constraint firstAttribute="centerX" secondItem="2pf-Mq-BV3" secondAttribute="centerX" id="uZO-y2-DlT"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="IfY-5d-JhM">
+                        <nil key="title"/>
+                        <segmentedControl key="titleView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" id="Mdj-TK-efK">
+                            <rect key="frame" x="180" y="7" width="240" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <segments>
+                                <segment title="Sports"/>
+                                <segment title="News"/>
+                                <segment title="Social"/>
+                            </segments>
+                            <connections>
+                                <action selector="segmentButtonPressed:" destination="vXZ-lx-hvc" eventType="valueChanged" id="SZ5-xc-UjU"/>
+                            </connections>
+                        </segmentedControl>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="segmentedControl" destination="Mdj-TK-efK" id="uru-gz-JSJ"/>
+                        <outlet property="titleLabel" destination="dfE-rT-9Og" id="0Yx-sh-nab"/>
+                        <outlet property="webView" destination="2pf-Mq-BV3" id="dvz-Bz-KFQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1227" y="1048"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Z0c-Dd-56D">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="WBk-2t-F6R" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="eZg-a3-2zi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="eTn-kG-OaG"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GY3-OE-eKI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="440" y="1048"/>
+        </scene>
+    </scenes>
+</document>
